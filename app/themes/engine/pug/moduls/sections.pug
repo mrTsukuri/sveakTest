@@ -1,0 +1,17 @@
+include ../component/component
+
+mixin main-block 
+    section.main-block
+        .container
+            .main-block-grid
+                -for(let i = 0; i < 25; i++)
+                    +main-block-item
+mixin aside
+    aside.main-menu
+        .main-menu-wrapper
+            .main-menu-block.scroll                
+                -for(let i = 0; i < 2; i++)
+                    each val in ['Пункт меню №1', 'Пункт меню №2', 'Пункт меню №3', 'Пункт меню №4']                    
+                        +main-menu-item(val)
+
+

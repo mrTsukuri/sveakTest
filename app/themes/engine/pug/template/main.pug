@@ -1,0 +1,19 @@
+include ../moduls/header
+include ../moduls/footer  
+include ../moduls/sections
+
+block variables
+
+html(lang='ru-RU')
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet")
+        link(rel="preload", href="themes/engine/css/main.css" as="preload", type="style", crossorigin)
+        link(rel="stylesheet", href="themes/engine/css/main.css")
+        title #{title}
+    body        
+        block content                                 
+        script(src="themes/engine/js/main.bundle.js")

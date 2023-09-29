@@ -1,0 +1,70 @@
+.header    
+    background-color: #ADFCC8    
+    position: sticky
+    top: 0
+    z-index: 20
+    padding: 15px 20px
+    grid-area: header
+    &-wrapper
+        display: flex
+        align-items: center
+        justify-content: space-between    
+    &-menu        
+        position: relative        
+        width: 24px
+        height: 20px
+        & span
+            display: block
+            position: absolute            
+            left: 0
+            right: 0
+            height: 5px
+            border-radius: 15px
+            background-color: #000
+            opacity: .15
+            transition: none .35s cubic-bezier(.5,-0.35,.35,1.5)
+            &.header-menu-top
+                top: 0
+                transition-property: top, transform                
+            &.header-menu-mid
+                top: calc(50% - 2.5px)
+                transition-property: opacity                
+            &.header-menu-bot
+                bottom: 0
+                transition-property: bottom, transform                
+        &.active
+            & span.header-menu-top
+                transform: rotate(135deg)                
+                top: calc(50% - 2.5px)
+            & span.header-menu-mid
+                opacity: 0
+                transition-duration: 0s                   
+            & span.header-menu-bot
+                transform: rotate(225deg)                
+                bottom: calc(50% - 2.5px) 
+    &-end                
+        display: flex
+        align-items: center
+        width: 105px        
+        justify-content: space-between
+        & svg
+            opacity: .13
+            transition: .3s
+            cursor: pointer
+            &:hover
+                opacity: .5
+@media screen and ( min-width: 610px )
+    .header    
+        background-color: #95D9FF  
+@media screen and ( min-width: 995px )
+    .header    
+        background-color: rgba(214, 189, 255, 1)
+        &-menu
+            display: none
+        &-end
+            margin-left: auto    
+                    
+            
+                        
+
+                    

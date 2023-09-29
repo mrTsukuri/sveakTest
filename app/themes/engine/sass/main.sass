@@ -1,0 +1,50 @@
+*,::after,::before    
+    box-sizing: border-box
+body        
+    font-family: 'Roboto', sans-serif
+    color: #000
+    min-width: 320px
+    height: 100%
+    min-height: 100vh
+    display: grid
+    grid-template-columns: 100%
+    grid-template-rows: auto 1fr auto
+    grid-template-areas: 'header' 'main' 'footer' 'aside'
+    margin: 0px     
+    &.menu-open
+        overflow: hidden
+main
+    flex-grow: 1
+    grid-area: main
+    background-color: rgba(173, 252, 200, .4)
+    padding: 25px 0
+p
+    margin: 0
+.scroll
+    scrollbar-color: rgba(0, 0, 0, 1) rgba(50, 23, 77, 0.1)    
+    scrollbar-width: thin
+    &::-webkit-scrollbar
+        width: 4px
+        height: 4px
+    &::-webkit-scrollbar-track
+        background: rgba(0, 0, 0, .1)
+    &::-webkit-scrollbar-thumb
+        background-color: rgba(0, 0, 0, 1)
+        border-radius: 0
+@media screen and ( min-width: 610px )            
+    main
+        background-color: rgba(214, 189, 255, .4)
+@media screen and ( min-width: 995px )
+    body
+        grid-template-columns: auto 1fr
+        grid-template-rows: auto 1fr auto
+        grid-template-areas: 'aside header' 'aside main' 'footer footer'        
+    main
+        background-color: rgba(214, 189, 255, .4)
+           
+@import header
+@import container
+@import main-block
+@import footer
+@import content
+@import main-menu
